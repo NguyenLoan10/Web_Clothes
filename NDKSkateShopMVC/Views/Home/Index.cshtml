@@ -1,0 +1,144 @@
+﻿@using NDKSkateShopMVC.Models
+@{
+    ViewBag.Title = "Index";
+    CommonInfo x = (CommonInfo)HttpContext.Current.Application["dungChung"];
+}
+<!--bikes-->
+<div class="row mt-4">
+    <div class="col-md-4 ">
+
+        <img src="" class="img-fluid" ; />
+
+    </div>
+    <div class="col-md-8 bg-body">
+        <br /> <h3 style="font-size:30px;">ĐẦM DẠ HỘI</h3>
+        <p>
+            <br /><br />
+            Đầm dạ hội (váy dự tiệc) là những chiếc đầm truyền thống có chiều dài chạm đất, thường được may từ chất liệu cao cấp như lụa, ôm theo đường cong cơ thể một cách tinh tế, vừa sang trọng, vừa quyến rũ.
+            Đầm dạ hội được xem như biểu tượng của sự sang trọng, lôi cuốn và là một yêu cầu về trang phục quan trọng trong những sự kiện, buổi tiệc lớn. Từng là biểu tượng của giới thượng lưu, ngày nay, đầm dạ hội trở nên phổ biến hơn, nhất là trong những buổi tiệc công ty, đại hội khách hàng, lễ cưới...
+            Những chiếc váy dự tiệc sang trọng, quyến rũ này giúp mỗi người phụ nữ trở nên nổi bật hơn, ấn tượng hơn trong mỗi sự kiện mình tham dự.
+        </p>
+
+    </div>
+</div>
+<h3><b>---------------------------------------------------------------------------------------------------</b></h3>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-4 ">
+
+            <img src="" class="img-fluid" ; />
+
+        </div>
+        <div class="col-md-8 bg-body">
+            <br /> <h3 style="font-size:30px;margin-top:100px;">T - SHIRT</h3>
+            <p>
+                <br /><br />
+                T shirt hay còn tên gọi đầy đủ tee shirt là kiểu loại áo phông đơn giản, có thiết kế được làm từ hình chữ T đơn giản với không cổ, tay ngắn và phần thân chính giữa hình chữ nhật.  Sau khi du nhập vào thị trường Việt Nam thì mọi người thường sẽ ít gọi bằng t shirt nữa mà thay vào đó là “áo thun” theo phương ngữ của miền Nam và “áo phông” theo phương ngữ của miền Bắc.
+
+                Thông thường những mẫu áo T-shirt hiện nay được làm từ nhiều chất liệu khác nhau nhưng phổ biến nhất vẫn là cotton mềm mại, thoáng mát. Về màu sắc thì nhường như là không có giới hạn khi mà hầu như là có đầy đủ tất cả các tông màu cho đến phối màu mới nhất. Hoa văn trên áo tee shirt cũng rất đa dạng từ chữ, hình ảnh hoặc kẻ sọc, caro. Thời trang áo thun phông hiện nay được mọi người ưa chuộng từ trang phục đi làm, đi chơi, đi tập thể dục hay đi học.
+            </p>
+
+        </div>
+    </div>
+</div>
+<div class="bikes">
+    <h3>SẢN PHẨM</h3>
+    <div class="bikes-grids">
+        <ul id="flexiselDemo1">
+            @foreach (SanPham i in x.SanPhamComplete(4))
+            {
+                <li>
+                    <img src="@Html.DisplayFor(model => i.AnhDD)" alt="@Html.DisplayFor(model => i.TenSP)" />
+                    <div class="bike-info">
+                        <div class="model">
+                            <h4>@Html.DisplayFor(model => i.TenSP)<span>@Html.DisplayFor(model => i.GiaBan)</span></h4>
+                        </div>
+                        <div class="model-info">
+                            <a href="@Url.Action("Details", "Skateboards", new { id = i.MaSP})">Xem chi tiết</a>
+                            <a href="/ShoppingCart/AddtoCart/@i.MaSP">BUY</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="viw">
+                        <a href="bicycles.html">Xem chi tiết</a>
+                    </div>
+                </li>
+            }
+        </ul>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $("#flexiselDemo1").flexisel({
+                    visibleItems: 3,
+                    animationSpeed: 1000,
+                    autoPlay: true,
+                    autoPlaySpeed: 3000,
+                    pauseOnHover: true,
+                    enableResponsiveBreakpoints: true,
+                    responsiveBreakpoints: {
+                        portrait: {
+                            changePoint: 480,
+                            visibleItems: 1
+                        },
+                        landscape: {
+                            changePoint: 640,
+                            visibleItems: 2
+                        },
+                        tablet: {
+                            changePoint: 768,
+                            visibleItems: 3
+                        }
+                    }
+                });
+            });
+        </script>
+        <script type="text/javascript" src="~/Scripts/jquery.flexisel.js"></script>
+    </div>
+</div>
+<section class="dt">
+    <div class="container">
+        <div class="row mt-3">
+            <h3 style="text-align:center;color:red;font-size:25px;">THƯƠNG HIỆU
+            <br />
+            </h3>
+            <div class="col-md-3">
+
+                <a href="https://levents.asia/">
+                    <img src="~/Asset/Images/levents-local-brand-1.jpg" class="img-fluid" style="height:150px;width:150px; border:2px solid;" />
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="https://swe.vn/">
+                    <img src="~/Asset/Images/swe.png" class="img-fluid" style="height: 150px; width: 150px; border: 2px solid;" />
+                </a>
+
+            </div>
+            <div class="col-md-3">
+                <a href="https://www.missoutclo.com/">
+                    <img src="~/Asset/Images/missout.png" class="img-fluid" style="height: 150px; width: 150px; border: 2px solid;" />
+                </a>
+
+            </div>
+            <div class="col-md-3">
+                <a href="https://vmstyle.vn/">
+                    <img src="~/Asset/Images/vm.jpg" class="img-fluid" style="height: 150px; width: 150px; border: 2px solid;" />
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!---->
+<div class="contact">
+    <div class="container">
+        <h3>LIÊN HỆ</h3>
+        <p>Hãy liên hệ với chúng tôi để giải đáp mọi thắc mắc</p>
+        <form>
+            <input type="text" placeholder="HỌ" required="">
+            <input type="text" placeholder="TÊN" required="">
+            <input class="user" type="text" placeholder="EMAIL" required=""><br>
+            <textarea placeholder="LỜI NHẮN"></textarea>
+            <input type="submit" value="GỬI">
+        </form>
+    </div>
+</div>
+
