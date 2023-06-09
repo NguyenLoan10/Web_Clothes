@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NDKSkateShopMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,13 @@ namespace NDKSkateShopMVC.Controllers
 {
     public class TimKiemController : Controller
     {
-        // GET: TimKiem
-        public ActionResult Index()
-        {
-            return View();
-        }
+          // GET: TimKiem
+            QLSSNDKEntities db = new QLSSNDKEntities();
+            public ActionResult KQTimKiem(string search)
+            {
+                var lstsp = db.SanPhams.Where(n => n.TenSP.Contains(search));
+                return View(lstsp.OrderBy(n => n.TenSP));
+            }
+        
     }
 }

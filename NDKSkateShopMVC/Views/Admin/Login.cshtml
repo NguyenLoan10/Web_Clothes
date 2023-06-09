@@ -1,7 +1,8 @@
 ﻿@model NDKSkateShopMVC.Models.Admin
 
 @{
-    Layout = null;
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <!DOCTYPE html>
@@ -50,7 +51,7 @@
     }
 
     <div>
-        @Html.ActionLink("Back to Skateshop NDK", "Index", "Home")
+        @Html.ActionLink("Back to Clothes", "Index", "Home")
     </div>
 </body>
 </html>
