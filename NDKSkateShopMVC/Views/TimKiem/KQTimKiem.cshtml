@@ -4,20 +4,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3 style="text-align:center;color:red">Kết Quả Tìm Kiếm</h3>
+<h3 style="text-align:center;color:lightpink">Kết Quả Tìm Kiếm</h3>
 <div class="container">
     <div class="row">
         @foreach (var tatcasanpham in Model)
         {
             <div class=" col-md-4">
                 <div class="card" style="width: 100%;">
-                    <img src="~/Public/img/@tatcasanpham.AnhDD" class="card-img-top" alt="...">
+                    <img src="@tatcasanpham.AnhDD" class="card-img-top" width="300px" heigh="300px "alt="...">
                     <div class="card-body">
                         <a href="@Url.Action("Details","Skateboards", new { id =tatcasanpham.MaSP})" style="text-decoration:none">
                             <h5 class="card-title">@tatcasanpham.TenSP</h5>
                         </a>
                         <h5>Giá Bán: @tatcasanpham.GiaBan</h5>
-                        <a href="@Url.Action("ThemGioHang","GioHang", new { @iMaSP =tatcasanpham.MaSP, @strURL = Request.Url.ToString()})" class="btn btn-primary">Đặt mua</a>
+                        <a href="@Url.Action("ThemGioHang","GioHang", new { @iMaSP =tatcasanpham.MaSP, @strURL = Request.Url.ToString()})" class="btn btn-primary">BUY</a>
                     </div>
                 </div>
             </div>}

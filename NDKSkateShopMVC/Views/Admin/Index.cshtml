@@ -6,6 +6,6 @@
 
 @if (User.Identity.IsAuthenticated)
 {
-    <h1 style="text-align: center; padding-top: 23px; font-weight: bold;">Welcome @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</h1>
-    <h4 style="text-align: center; padding-top: 23px;" ><a href="@Url.Action("SignOut","Admin")">Logout</a></h4>
+    <h1 style="text-align: center; padding-top: 23px; font-weight: bold; color: lightpink">Xin chào Admin của Shop Mãi Mận <br /> Chúc bạn một ngày làm việc vui vẻ hihi!</h1>
+    <h4 style="text-align: center; padding-top: 23px; color: red" ><a href="@Url.Action("SignOut","Admin")">Logout</a></h4>
 }
