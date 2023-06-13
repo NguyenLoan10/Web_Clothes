@@ -1,4 +1,5 @@
 ﻿using NDKSkateShopMVC.Models;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,10 +65,7 @@ namespace NDKSkateShopMVC.Controllers
                 return PartialView("BagCart");
             
         }
-        public ActionResult Shopping_Success()
-        {
-            return View();
-        }
+        
         public ActionResult CheckOut(FormCollection form)
         {
             try
@@ -93,8 +91,13 @@ namespace NDKSkateShopMVC.Controllers
             }
             catch
             {
-                return Content("Đặt hàng không thành công! Xin vui lòng kiểm tra lại thông tin đăng nhập...");
+                return Content(" Xin vui lòng kiểm tra lại thông tin đăng nhập...");
             }
         }
+        public ActionResult Shopping_Success()
+        {
+            return View();
+        }
+        
     }
 }

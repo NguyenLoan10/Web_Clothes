@@ -136,6 +136,7 @@
     <Content Include="Asset\Images\b-arrow.png" />
     <Content Include="Asset\Images\banner.jpg" />
     <Content Include="Asset\Images\cart.png" />
+    <Content Include="Asset\Images\ck.jpg" />
     <Content Include="Asset\Images\close.png" />
     <Content Include="Asset\Images\dangnhap.jpg" />
     <Content Include="Asset\Images\dwn.png" />
@@ -147,6 +148,7 @@
     <Content Include="Asset\Images\lh.jpg" />
     <Content Include="Asset\Images\menu-arrow.png" />
     <Content Include="Asset\Images\missout.png" />
+    <Content Include="Asset\Images\momo.jpg" />
     <Content Include="Asset\Images\p_minus.png" />
     <Content Include="Asset\Images\p_plus.png" />
     <Content Include="Asset\Images\S1.jpg" />
