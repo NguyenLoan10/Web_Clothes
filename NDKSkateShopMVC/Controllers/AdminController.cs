@@ -302,5 +302,52 @@ namespace NDKSkateShopMVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Brand");
         }
+
+        public ActionResult Khachhang()
+        {
+            return View(db.KhachHangs.ToList());
+        }
+        public ActionResult ChitietKH(int id)
+        {
+            // Lấy ra đối tượg loại theo mã
+            KhachHang item = db.KhachHangs.SingleOrDefault(n => n.CodeCus == id);
+            ViewBag.Codecus = item.CodeCus;
+            if (item == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(item);
+        }
+        public ActionResult XoaKH(int id)
+        {
+            // lấy ra đối tượng KH cần xóa theo mã
+            KhachHang item = db.KhachHangs.SingleOrDefault(n => n.CodeCus == id);
+            ViewBag.Codecus = item.CodeCus;
+            if (item == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(item);
+        }
+        [HttpPost, ActionName("XoaKH")]
+        public ActionResult Xacnhanxoa3(int id)
+        {
+            // lấy ra đối tượng KH cần xóa theo mã
+            KhachHang item = db.KhachHangs.SingleOrDefault(n => n.CodeCus == id);
+            ViewBag.MaBrand = item.CodeCus;
+            if (item == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            db.KhachHangs.Remove(item);
+            db.SaveChanges();
+            return RedirectToAction("Brand");
+        }
+
+
+
     }
 }

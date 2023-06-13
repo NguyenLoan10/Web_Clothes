@@ -4,7 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3 style="text-align:center;color:lightpink">Kết Quả Tìm Kiếm</h3>
+<br /> 
+<br />
+<h3  style="text-align:center;color:lightpink">Kết Quả Tìm Kiếm</h3>
 <div class="container">
     <div class="row">
         @foreach (var tatcasanpham in Model)
@@ -17,9 +19,11 @@
                             <h5 class="card-title">@tatcasanpham.TenSP</h5>
                         </a>
                         <h5>Giá Bán: @tatcasanpham.GiaBan</h5>
-                        <a href="@Url.Action("ThemGioHang","GioHang", new { @iMaSP =tatcasanpham.MaSP, @strURL = Request.Url.ToString()})" class="btn btn-primary">BUY</a>
+                        <div class="btn_form">
+                            <a href="/ShoppingCart/AddtoCart/@tatcasanpham.MaSP">BUY</a>
+                        </div>   
+                        </div>
                     </div>
-                </div>
             </div>}
 
     </div>

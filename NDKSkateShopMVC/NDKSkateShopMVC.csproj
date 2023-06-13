@@ -377,6 +377,9 @@
     <Content Include="Views\Shared\_LayoutDH.cshtml" />
     <Content Include="Views\GioiThieu\Index.cshtml" />
     <Content Include="Views\TimKiem\KQTimKiem.cshtml" />
+    <Content Include="Views\Admin\Khachhang.cshtml" />
+    <Content Include="Views\Admin\ChitietKH.cshtml" />
+    <Content Include="Views\Admin\XoaKH.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,84 @@
+﻿@model NDKSkateShopMVC.Models.KhachHang
+@{
+    ViewBag.Title = "ChitietKH";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align:center; color: black;">Chi tiết khách hàng</h2>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <dl class="dl-horizontal">
+                            <dt>
+                                IDCus
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.IDCus)
+                            </dd>
+                            <dt>
+                                CodeCus
+                            </dt>
+                               
+                            <dd>
+                                @Html.DisplayFor(model => model.CodeCus)
+                            </dd>
+                            <dt>
+                                Họ Tên
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.HoTen)
+                            </dd>
+
+                            <dt>
+                                Email
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.Email)
+                            </dd>
+
+                            <dt>
+                                
+                                số Điện Thoại
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DienThoaiKH)
+                            </dd>
+                       
+                            <dt>
+                                Địa chỉ
+                            </dt>
+
+                            <dd>
+                                @Html.DisplayFor(model => model.DiaChiKH)
+                            </dd>
+
+                        </dl>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p style="text-align:center">
+    @Html.ActionLink("Trở về", "Khachhang")
+</p>
+
+

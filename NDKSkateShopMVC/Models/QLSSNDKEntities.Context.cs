@@ -32,5 +32,6 @@ namespace NDKSkateShopMVC.Models
         public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<Part> Parts { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }
+       
     }
 }

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<NDKSkateShopMVC.Models.KhachHang>
+@{
+    ViewBag.Title = "Khachhang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h3 style="text-align:center; color:black; margin-top:50px">QUẢN LÝ KHÁCH HÀNG</h3>
+<div class="container" style="margin-top:30px">
+
+    <div class="row">
+
+        <div class="col-md-3">
+
+            <div class="list-group">
+
+            </div>
+        </div>
+
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table" style="margin-bottom:50px;width:1000px;height:300px">
+                        <tr>
+                            <th>
+                                IDCus
+                            </th>
+                            <th>
+                                CodeCus
+                            </th>
+                            <th>
+                                Họ Tên
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Số điện thoại
+                            </th>
+                            <th>
+                                Địa chỉ
+                            </th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IDCus)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodeCus)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.HoTen)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DienThoaiKH)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DiaChiKH)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Chi Tiết", "ChitietKH", new { id = item.CodeCus }) |
+                                    @Html.ActionLink("Xóa", "XoaKH", new { id = item.CodeCus })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+

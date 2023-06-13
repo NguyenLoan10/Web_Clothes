@@ -93,7 +93,7 @@ namespace NDKSkateShopMVC.Controllers
             }
             catch
             {
-                return Content("Error Checkout. Please information of Customer...");
+                return Content("Đặt hàng không thành công! Xin vui lòng kiểm tra lại thông tin đăng nhập...");
             }
         }
     }
