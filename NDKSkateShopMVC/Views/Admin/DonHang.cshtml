@@ -1,0 +1,73 @@
+﻿@model IEnumerable<NDKSkateShopMVC.Models.DonDatHang>
+@{
+    ViewBag.Title = "DonHang";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h3 style="text-align: center ; color:black;">QUẢN LÝ ĐƠN ĐẶT HÀNG</h3>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-9">
+
+            <div class="row carousel-holder">
+
+                <div class="col-md-12">
+                    <table class="table">
+                        <tr>
+                            <th>
+                                Mã đơn hàng
+                            </th>
+                            <th>
+                                Mã khách hàng
+                            </th>
+                            <th>
+                                Ngày đặt hàng
+                            </th>
+                            <th>
+                                Địa chỉ giao hàng
+                            </th>
+
+                            <th></th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IDOrder)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CodeCus)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NgayDH)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DCGH)
+                                </td>
+
+                                <td>
+
+                                    @Html.ActionLink("Chi Tiết", "ChitietDH", new { id = item.IDOrder }) |
+                                    @Html.ActionLink("Sửa", "SuaDH", new { id = item.IDOrder }) |
+                                    @Html.ActionLink("Xóa", "XoaDH", new { id = item.IDOrder })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+

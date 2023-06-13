@@ -380,6 +380,10 @@
     <Content Include="Views\Admin\Khachhang.cshtml" />
     <Content Include="Views\Admin\ChitietKH.cshtml" />
     <Content Include="Views\Admin\XoaKH.cshtml" />
+    <Content Include="Views\Admin\DonHang.cshtml" />
+    <Content Include="Views\Admin\ChitietDH.cshtml" />
+    <Content Include="Views\Admin\XoaDH.cshtml" />
+    <Content Include="Views\Admin\SuaDH.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

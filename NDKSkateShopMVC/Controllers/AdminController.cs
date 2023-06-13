@@ -346,8 +346,61 @@ namespace NDKSkateShopMVC.Controllers
             db.SaveChanges();
             return RedirectToAction("Brand");
         }
+        public ActionResult DonHang()
+        {
+            return View(db.DonDatHangs.ToList());
+        }
+        public ActionResult ChitietDH(int id)
+        {
+            // Lấy ra đối tượg loại theo mã
+            DonDatHang item = db.DonDatHangs.SingleOrDefault(n => n.IDOrder == id);
+            ViewBag.Idoder = item.IDOrder;
+            if (item == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(item);
+        }
+        
+        public ActionResult XoaDH(int id)
+        {
+            var dh = from donhang in db.DonDatHangs where donhang.IDOrder == id select donhang;
+            return View(dh.SingleOrDefault());
+        }
+        [HttpPost, ActionName("XoaDH")]
+        public ActionResult Xacnhanxoa4(int id)
+        {
+            DonDatHang dh = db.DonDatHangs.SingleOrDefault(n => n.IDOrder == id);
+            ChiTietDatHang cthd = db.ChiTietDatHangs.SingleOrDefault(m => m.IDOrder == id);
+            db.DonDatHangs.Remove(dh);
+            db.ChiTietDatHangs.Remove(cthd);
+            db.SaveChanges();
+            return RedirectToAction("DonHang");
+        }
+        [HttpGet]
+        public ActionResult SuaDH(int id)
+        {// lấy ra đối tượng brand theo mã
+            DonDatHang item = db.DonDatHangs.SingleOrDefault(n => n.IDOrder == id);
+            if (item == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
 
+            return View(item);
+        }
+       
 
+        //             
+        public ActionResult Update(int id)
+        {
+            DonDatHang dh = db.DonDatHangs.Where(n => n.IDOrder == id).SingleOrDefault();
+            UpdateModel(dh);
+            db.SaveChanges();
+            return RedirectToAction("DonHang");
 
+        }
     }
+
 }
